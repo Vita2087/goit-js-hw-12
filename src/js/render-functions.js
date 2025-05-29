@@ -50,3 +50,9 @@ export function showLoader() {
 export function hideLoader() {
   loaderEl.classList.add('hidden');
 }
+
+showLoadMoreButton(); {
+  
+}
+
+hideLoadMoreButton(); {}
