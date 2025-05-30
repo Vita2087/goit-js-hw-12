@@ -45,11 +45,11 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loaderEl.classList.remove('hidden');
+  loaderEl.classList.add('is-active');
 }
 
 export function hideLoader() {
-  loaderEl.classList.add('hidden');
+  loaderEl.classList.remove('is-active');
 }
 
 export function showLoadMoreButton() {
@@ -59,4 +59,3 @@ export function showLoadMoreButton() {
 export function hideLoadMoreButton() {
   loadMoreBtn.classList.add('hidden');
 }
-

@@ -40,6 +40,12 @@ formEl.addEventListener('submit', async event => {
   clearGallery();
   hideLoadMoreButton();
   showLoader();
+  await waitNextFrame();
+  // await new Promise(resolve => {
+  //   requestAnimationFrame(() => {
+  //     setTimeout(resolve, 0);
+  //   });
+  // });
 
   try {
     const data = await getImagesByQuery(currentQuery, currentPage);
@@ -75,6 +81,7 @@ loadMoreBtn.addEventListener('click', async () => {
 
   showLoader();
   hideLoadMoreButton();
+  await waitNextFrame();
 
   try {
     const data = await getImagesByQuery(currentQuery, currentPage);
@@ -93,6 +100,7 @@ loadMoreBtn.addEventListener('click', async () => {
     const cardHeight = document
       .querySelector('.gallery')
       .firstElementChild.getBoundingClientRect().height;
+    
     window.scrollBy({
       top: cardHeight * 2,
       behavior: 'smooth',
@@ -118,4 +126,10 @@ loadMoreBtn.addEventListener('click', async () => {
     hideLoader();
   }
 });
+
+async function waitNextFrame() {
+  return new Promise(resolve => {
+    requestAnimationFrame(() => setTimeout(resolve, 0));
+  });
+}
 
