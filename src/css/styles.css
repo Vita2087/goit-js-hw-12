@@ -3,20 +3,36 @@
 
 /* https://www.figma.com/design/ikD0S2P6gN6MKQUXfA11RG/HW-JavaScript--Copy-?node-id=3-941&p=f&t=LTI3njc7cUpgv7BM-0 */
 
-.loader {
-  display: none;
-}
-body.loading .loader {
-  display: block;
+body {
+  overflow-y: scroll;
 }
 
-/* Центрування loader */
+.hidden {
+  display: none !important; 
+}
+
 .loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-weight: 400;
+  color: #f5e0e0;
+  font-size: 18px;
+}
+
+.load-more {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #808080;
+  color: black;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: #e0e1e4;
+  transition: background-color 0.3s ease;
 }
 
 .form {
